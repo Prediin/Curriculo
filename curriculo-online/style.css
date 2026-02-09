@@ -1,0 +1,145 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #34495e;
+    --text-color: #444;
+    --bg-color: #f4f7f6;
+    --sidebar-bg: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.4;
+    padding: 20px 10px; /* Reduzido para telas menores */
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    display: grid;
+    /* Mantém a proporção de colunas fixa */
+    grid-template-columns: 32% 68%; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+/* Barra Lateral */
+.sidebar {
+    background-color: var(--sidebar-bg);
+    padding: 30px 15px; /* Padding otimizado */
+    border-right: 1px solid #eee;
+    word-wrap: break-word; /* Evita que e-mails longos quebrem o layout */
+}
+
+.profile-img img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--bg-color);
+}
+
+.sidebar h3 {
+    font-size: 0.75rem; /* Fonte menor para caber na lateral */
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    margin: 20px 0 8px 0;
+    border-bottom: 2px solid var(--bg-color);
+    text-transform: uppercase;
+}
+
+.sidebar p, .sidebar li {
+    font-size: 0.7rem; /* Ajuste fino para celular */
+    margin-bottom: 6px;
+    list-style: none;
+}
+
+/* Conteúdo Principal */
+.main-content {
+    padding: 30px 20px;
+}
+
+header {
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 1.6rem; /* Tamanho adaptável */
+    color: var(--primary-color);
+    line-height: 1.1;
+}
+
+header h2 {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    font-weight: 400;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section h3 {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    padding-bottom: 3px;
+}
+
+.item {
+    margin-bottom: 12px;
+}
+
+.item h4 {
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.item span {
+    font-size: 0.75rem;
+    color: #777;
+    font-style: italic;
+}
+
+.item p {
+    font-size: 0.8rem;
+    margin-top: 3px;
+}
+
+/* Ajustes específicos para telas muito pequenas (Celulares) */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    
+    .container {
+        grid-template-columns: 35% 65%; /* Alarga levemente a lateral no mobile */
+    }
+
+    .main-content {
+        padding: 20px 12px;
+    }
+
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    .sidebar h3 {
+        font-size: 0.65rem;
+    }
+}
